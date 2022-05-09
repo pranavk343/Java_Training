@@ -8,11 +8,13 @@ class SQLCmds{
     String name;
     int id;
     Scanner ob = new Scanner(System.in);
-    void insertCmd() throws Exception{
+    SQLCmds() throws Exception{
         Class.forName("org.postgresql.Driver");
-        //System.out.println("Driver loaded");
+        System.out.println("Driver loaded");
         conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/test","postgres","789456");
         stmt = conn.createStatement();
+    }
+    void insertCmd() throws Exception{
         System.out.println("Enter id: ");
         id = ob.nextInt();
         System.out.println("Enter name : ");
@@ -23,24 +25,16 @@ class SQLCmds{
         conn.close();
     }
     void selectCmd() throws Exception{
-        Class.forName("org.postgresql.Driver");
-        //System.out.println("Driver loaded");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/test","postgres","789456");
-        stmt = conn.createStatement();
         String sql="select * from student";
         rs=stmt.executeQuery(sql);
         System.out.println("----------------------------------------");
          while (rs.next()) {
-             System.out.println(rs.getInt("Id") +" | "+ rs.getString("Name"));
+             System.out.println(rs.getInt("Id") +"   |   "+ rs.getString("Name"));
          }
         System.out.println("----------------------------------------");
         conn.close();
     }
     void updateCmd() throws Exception{
-        Class.forName("org.postgresql.Driver");
-        //System.out.println("Driver loaded");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/test","postgres","789456");
-        stmt = conn.createStatement();
         System.out.println("Enter which column to be updated (id/name) : ");
         String sel = ob.next();
         if(sel.equalsIgnoreCase("id")){
@@ -63,10 +57,6 @@ class SQLCmds{
 
     }
     void deleteCmd() throws Exception{
-        Class.forName("org.postgresql.Driver");
-        //System.out.println("Driver loaded");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/test","postgres","789456");
-        stmt = conn.createStatement();
         System.out.println("Do you want delete all data : Yes/No ");
         String data = ob.next();
 //        if(data.equalsIgnoreCase("yes")){
