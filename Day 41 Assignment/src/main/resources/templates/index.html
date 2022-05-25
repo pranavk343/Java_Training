@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Login Page</title>
+  </head>
+  <body>
+    <h1>Login Page</h1>
+    <form method="post" action="/save">
+      <input type="text" name="userName" placeholder="Username" />
+      <br />
+      <br />
+      <input type="password" name="userPass" placeholder="Password" />
+      <br />
+      <br />
+      <input type="text " name="userEmail" placeholder="Email" />
+      <br />
+      <br />
+      <input type="submit" value="Save" />
+    </form>
+    <a href="/showAll">Show All</a>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+        <h1>All Data</h1>
+    <table border="1" style="border-color: black">
+      <th>ID</th>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Email</th>
+      <tr th:each="data: ${users}">
+        <td th:text="${data.id}"></td>
+        <td th:text="${data.userName}"></td>
+        <td th:text="${data.userPass}"></td>
+        <td th:text="${data.userEmail}"></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>All Data</title>
+  </head>
+  <body>
+    <h1>All Data</h1>
+    <table border="1" style="border-color: black">
+      <th>ID</th>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Email</th>
+      <tr th:each="data: ${users}">
+        <td th:text="${data.id}"></td>
+        <td th:text="${data.userName}"></td>
+        <td th:text="${data.userPass}"></td>
+        <td th:text="${data.userEmail}"></td>
+      </tr>
+    </table>
+  </body>
+</html>
