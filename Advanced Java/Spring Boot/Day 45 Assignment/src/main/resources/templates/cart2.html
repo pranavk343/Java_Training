@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cart2</title>
+  </head>
+  <body>
+    <h1>Cart2</h1>
+    <input type="checkbox" name="list" value="D, 400" />D 400
+    <br />
+    <input type="checkbox" name="list" value="E, 500" />E 500
+    <br />
+    <input type="checkbox" name="list" value="F, 600" />F 600
+    <br />
+    <a th:href="@{'/checkout?uname='+${uname}+'?list='+${list}}"
+      ><input type="submit" value="Checkout"
+    /></a>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+.user-form {
+  border: 3px solid black;
+  margin: 50px;
+  width: 250px;
+  height: 150px;
+  padding: 20px;
+}
+.login {
+  margin-left: 100px;
+}
+.heading {
+  margin-left: 120px;
+  padding-bottom: 0px;
+}
+.new_user {
+  margin-left: 90px;
+}
+.new_register {
+  border: 3px solid black;
+  margin: 70px;
+  width: 350px;
+  padding: 20px;
+}
