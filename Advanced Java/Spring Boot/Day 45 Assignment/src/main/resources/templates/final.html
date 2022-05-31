@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Final</title>
+  </head>
+  <body>
+    <h1>Final</h1>
+    <h2>
+      Welcome :
+      <p th:text="${uname}" />
+    </h2>
+    <table border="2">
+      <th>Item Name</th>
+      <th>Item Cost</th>
+      <tr th:each="data: ${cart}">
+        <td th:text="${data.name}"></td>
+        <td th:text="${data.cost}"></td>
+      </tr>
+      <tr>
+        <td>Total</td>
+        <td th:text="${total}"></td>
+      </tr>
+    </table>
+  </body>
+</html>

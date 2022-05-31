@@ -5,14 +5,14 @@
   </head>
   <body>
     <h1>Cart2</h1>
-    <input type="checkbox" name="list" value="D, 400" />D 400
+    <form method="get" action="/checkout"> 
+    <input type="checkbox" name="items" value="D" />D 
     <br />
-    <input type="checkbox" name="list" value="E, 500" />E 500
+    <input type="checkbox" name="items" value="E" />E 
     <br />
-    <input type="checkbox" name="list" value="F, 600" />F 600
+    <input type="checkbox" name="items" value="F" />F 
     <br />
-    <a th:href="@{'/checkout?uname='+${uname}+'?list='+${list}}"
-      ><input type="submit" value="Checkout"
-    /></a>
+    <input type="submit" value="Checkout"/>
+    </form>
   </body>
 </html>
